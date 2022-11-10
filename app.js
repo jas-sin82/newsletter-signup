@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const https = require("https");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+require("dotenv").config();
 
 //get request
 app.get("/", (req, res) => {
@@ -31,14 +32,17 @@ app.post("/", (req, res) => {
 
   //data saved in constant jasonData
   const jsonData = JSON.stringify(data);
+  const list_id = process.env.LIST_ID;
 
   // mailchimp url
-  const url = "https://us21.api.mailchimp.com/3.0/lists/fd8e286e5f";
+  const url = "https://us21.api.mailchimp.com/3.0/lists/" + list_id;
+
+  const api_key = process.env.API_KEY;
 
   // options
   const option = {
     method: "POST",
-    auth: "jas02:15edfc0b1180b813f684d37b0e986b72-us21",
+    auth: "jas02:" + api_key,
   };
 
   // https request
