@@ -1,4 +1,4 @@
-# newsletter-signup (BackEnd project)
+# Newsletter-signup (BackEnd project)
 
 Newsletter signup App(mini project)
 
