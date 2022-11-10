@@ -42,7 +42,7 @@ app.post("/", (req, res) => {
   // options
   const option = {
     method: "POST",
-    auth: "jas02:" + api_key,
+    auth: "mars:" + api_key,
   };
 
   // https request
